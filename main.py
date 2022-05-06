@@ -11,6 +11,5 @@ while True:
 
   for train in vehicles:
     if train['predictable'] == 'true':
-      print('OWO NEW TRAIN')
       print(train['routeTag'] + ': ' + train['lon'] + ' ' + train['lat'])
   time.sleep(9)
