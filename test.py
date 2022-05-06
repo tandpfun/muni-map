@@ -12,4 +12,4 @@ while True:
   i = i + 1
   pixels[i % 60] = (0, 0, 255)
   pixels[(i - 2) % 60] = (0, 0, 0)
-  time.sleep(.25)
+  time.sleep(.10)
