@@ -11,10 +11,10 @@ num_pixels = 60
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=neopixel.GRBW)
 
 pixels.fill((0, 0, 255))
-
+pixels.show()
 time.sleep(5)
-
 pixels.fill(0)
+pixels.show()
 
 def dist(lat1, long1, lat2, long2):
     """
