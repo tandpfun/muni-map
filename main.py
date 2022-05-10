@@ -2,6 +2,13 @@ import time
 from requests import get
 import json
 from math import radians, cos, sin, asin, sqrt
+import board
+import neopixel
+
+pixel_pin = board.D21
+num_pixels = 60
+
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=neopixel.GRBW)
 
 def dist(lat1, long1, lat2, long2):
     """
@@ -39,5 +46,8 @@ while True:
         distances[key] = dist(float(train['lat']), float(train['lon']), pixel[0], pixel[1])
 
       closest_light = sorted(distances.items(), key=lambda x: x[1])[0][0]
+      pixels[closest_light] = (0, 0, 255)
+      
       print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light))
+  pixels.show()
   time.sleep(9)
