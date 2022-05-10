@@ -57,4 +57,4 @@ while True:
       
       print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light))
   pixels.show()
-  time.sleep(9)
+  time.sleep(10)
