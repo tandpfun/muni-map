@@ -12,7 +12,7 @@ pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=1, auto_write=False
 
 pixels.fill((0, 0, 255))
 pixels.show()
-time.sleep(500)
+time.sleep(5)
 pixels.fill(0)
 pixels.show()
 
