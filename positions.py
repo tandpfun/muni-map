@@ -1,3 +1,5 @@
+L=0
+
 import board
 import neopixel
 
@@ -7,5 +9,5 @@ num_pixels = 60
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=1, auto_write=False, pixel_order=neopixel.GRBW)
 
 pixels.fill(0)
-pixels[0] = (0, 0, 255)
+pixels[L] = (0, 0, 255)
 pixels.show()
