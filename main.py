@@ -59,7 +59,13 @@ while True:
         distances[key] = dist(float(train['lat']), float(train['lon']), pixel[0], pixel[1])
 
       closest_light = sorted(distances.items(), key=lambda x: x[1])[0][0]
-      pixels[closest_light] = (0, 0, 255)
+
+      dirColor = (0, 0, 255)
+
+      if train['dirTag'] == "KT___I_F20":
+        dirColor = (255, 0, 0)
+
+      pixels[closest_light] = dirColor
       
       print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light))
   pixels.show()
