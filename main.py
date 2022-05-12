@@ -8,7 +8,7 @@ import neopixel
 pixel_pin = board.D21
 num_pixels = 60
 
-pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=.5, auto_write=False, pixel_order=neopixel.GRBW)
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=.8, auto_write=False, pixel_order=neopixel.GRBW)
 
 pixels.fill((0, 170, 255))
 pixels.show()
@@ -65,7 +65,7 @@ while True:
       dirColor = (0, 0, 255)
 
       if train['dirTag'] == "KT___I_F20":
-        dirColor = (255, 0, 0)
+        dirColor = (150, 0, 0)
 
       pixels[closest_light] = dirColor
       
