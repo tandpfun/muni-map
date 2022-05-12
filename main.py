@@ -50,6 +50,8 @@ while True:
   positionData = get(url).json()
   vehicles = positionData['vehicle']
 
+  pixels.fill(0)
+
   for train in vehicles:
     if train['predictable'] == 'true':
 
