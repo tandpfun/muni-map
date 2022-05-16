@@ -85,10 +85,15 @@ while True:
       closest_light = sorted(distances.items(), key=lambda x: x[1])[0][0]
       closest_light_distance = sorted(distances.items(), key=lambda x: x[1])[0][1]
 
-      dirColor = (0, 0, 255)
+      
 
-      if train['dirTag'] == "KT___I_F20":
-        dirColor = (150, 0, 0)
+      if 'dirTag' in train.keys():
+        if train['dirTag'] == "KT___I_F20":
+          dirColor = (150, 0, 0)
+        else:
+          dirColor = (0, 0, 255)
+      else:
+        dirColor = (255, 255, 0)
 
       pixels[closest_light] = dirColor
       
