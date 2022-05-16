@@ -82,9 +82,8 @@ while True:
         pixel = pixel_locations[key]
         distances[key] = dist(float(train['lat']), float(train['lon']), pixel[0], pixel[1])
 
-      print(sorted(distances.items(), key=lambda x: x[1]))
-
       closest_light = sorted(distances.items(), key=lambda x: x[1])[0][0]
+      closest_light_distance = sorted(distances.items(), key=lambda x: x[1])[0][1]
 
       dirColor = (0, 0, 255)
 
@@ -93,6 +92,6 @@ while True:
 
       pixels[closest_light] = dirColor
       
-      print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light))
+      print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light) + ' ' + closest_light_distance)
   pixels.show()
   time.sleep(10)
