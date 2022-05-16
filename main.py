@@ -75,7 +75,7 @@ while True:
   pixels.fill(0)
 
   for train in vehicles:
-    if train['predictable'] == 'true':
+    if train['predictable'] == 'true' and 'dirTag' in train.keys():
 
       distances = {}
       for key in pixel_locations:
@@ -86,14 +86,9 @@ while True:
       closest_light_distance = sorted(distances.items(), key=lambda x: x[1])[0][1]
 
       
-
-      if 'dirTag' in train.keys():
-        if train['dirTag'] == "KT___I_F20":
-          dirColor = (150, 0, 0)
-        else:
-          dirColor = (0, 0, 255)
-      else:
-        dirColor = (255, 255, 0)
+      dirColor = (0, 0, 255)
+      if train['dirTag'] == "KT___I_F20":
+        dirColor = (150, 0, 0)
 
       pixels[closest_light] = dirColor
       
