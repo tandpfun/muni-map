@@ -10,9 +10,9 @@ num_pixels = 31
 
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=.8, auto_write=False, pixel_order=neopixel.GRBW)
 
-pixels.fill((0, 170, 255))
+pixels.fill((255, 255, 255))
 pixels.show()
-time.sleep(5)
+time.sleep(2)
 pixels.fill(0)
 pixels.show()
 
@@ -94,4 +94,4 @@ while True:
       
       print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light) + ' ' + str(closest_light_distance))
   pixels.show()
-  time.sleep(10)
+  time.sleep(5)
