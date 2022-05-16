@@ -92,6 +92,6 @@ while True:
 
       pixels[closest_light] = dirColor
       
-      print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light) + ' ' + closest_light_distance)
+      print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light) + ' ' + str(closest_light_distance))
   pixels.show()
   time.sleep(10)
