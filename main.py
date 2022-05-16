@@ -6,7 +6,7 @@ import board
 import neopixel
 
 pixel_pin = board.D21
-num_pixels = 60
+num_pixels = 31
 
 pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=.8, auto_write=False, pixel_order=neopixel.GRBW)
 
@@ -53,7 +53,16 @@ pixel_locations = {
   18: (37.7899545, -122.3899130),
   19: (37.7832515, -122.3890722),
   20: (37.7736165, -122.3883198),
-  21: (37.7655312, -122.3899130)
+  21: (37.7655312, -122.3899130),
+  22: (37.7610894, -122.3882771),
+  23: (37.7549432, -122.3884968),
+  24: (37.7549432, -122.3884968),
+  25: (37.7451210, -122.3880985),
+  26: (37.7398820, -122.3904242),
+  27: (37.7335996, -122.3889836),
+  28: (37.7287449, -122.3941174),
+  29: (37.7229074, -122.3960203),
+  30: (37.7229074, -122.3960203),
 }
 
 route = 'KT'
@@ -72,6 +81,8 @@ while True:
       for key in pixel_locations:
         pixel = pixel_locations[key]
         distances[key] = dist(float(train['lat']), float(train['lon']), pixel[0], pixel[1])
+
+      print(sorted(distances.items(), key=lambda x: x[1]))
 
       closest_light = sorted(distances.items(), key=lambda x: x[1])[0][0]
 
