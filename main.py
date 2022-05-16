@@ -90,6 +90,7 @@ while True:
       if train['dirTag'] == "KT___I_F20":
         dirColor = (150, 0, 0)
 
+      print(pixels[closest_light])
       pixels[closest_light] = dirColor
       
       print('KT ' + train['lat'] + ', ' + train['lon'] + ' => ' + str(closest_light) + ' ' + str(closest_light_distance))
